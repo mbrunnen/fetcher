@@ -23,11 +23,12 @@ cp ./fetcher.sh ~/.local/bin/fetcher
 ```
 
 That's it, but if you want to use the systemd service you need to install the
-unit file `fetcher.service` to a systemd unit path, e.g.
+unit file `fetcher.service` and timer `fetcher.timer` to a systemd unit path, e.g.
 `~/.config/systemd/user`:
 
 ```sh
 cp ./fetcher.service ~/.config/systemd/user/fetcher.service
+cp ./fetcher.timer ~/.config/systemd/user/fetcher.timer
 ```
 
 ## Configuration
@@ -55,10 +56,10 @@ The installed systemd service file will run `fetcher` automatically, after the
 network is online. To enable this just run following commands:
 ```
 systemctl --user reload-daemon
-systemctl --user enable fetcher.service
+systemctl --user enable fetcher.service fetcher.timer
 ```
 To try it out you can run:
 ```
-systemctl --user start fetcher.service
-systemctl --user status fetcher.service
+systemctl --user start fetcher.service fetcher.timer
+systemctl --user status fetcher.service fetcher.timer
 ```

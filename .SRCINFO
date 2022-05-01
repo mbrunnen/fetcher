@@ -9,8 +9,9 @@ pkgbase = fetcher
 	depends = git
 	source = fetcher.sh
 	source = fetcher.service
+	source = fetcher.timer
 	md5sums = 7850769db5609291b9aef320b87d9f15
 	md5sums = dab6b2be6bfbd3f2b77b000814e1e9fd
+	md5sums = 4832eef2949acd7c4a7a26ac212e1c8a
 
 pkgname = fetcher
-
