@@ -11,14 +11,17 @@ groups=()
 depends=('git')
 install="$pkgname.install"
 source=("fetcher.sh"
-        "fetcher.service")
+        "fetcher.service"
+        "fetcher.timer")
 noextract=()
 
 package() {
+    install -Dm644 $srcdir/fetcher.timer $pkgdir/usr/lib/systemd/user/fetcher.timer
     install -Dm644 $srcdir/fetcher.service $pkgdir/usr/lib/systemd/user/fetcher.service
     install -Dm755 $srcdir/fetcher.sh $pkgdir/usr/bin/fetcher
 }
 
 # vim:set ft=sh:
 md5sums=('7850769db5609291b9aef320b87d9f15'
-         'dab6b2be6bfbd3f2b77b000814e1e9fd')
+         'dab6b2be6bfbd3f2b77b000814e1e9fd'
+         '4832eef2949acd7c4a7a26ac212e1c8a')

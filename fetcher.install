@@ -5,5 +5,7 @@ post_install() {
     echo ==============================================================================
     echo Enable the fetcher daemon with:
     echo systemctl enable --user fetcher.service
+    echo Enable the fetcher timer (run each 15min) with:
+    echo systemctl enable --now --user fetcher.timer
     echo ==============================================================================
 }

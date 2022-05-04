@@ -1,0 +1,11 @@
+[Unit]
+Description=Update some git repos each 15mins
+Requires=fetcher.service
+
+[Timer]
+Unit=fetcher.service
+OnCalendar=*:0/15
+AccuracySec=5min
+
+[Install]
+WantedBy=timers.target
